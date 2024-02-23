@@ -1,13 +1,11 @@
-// This is your Prisma schema file,
-// learn more about it in the docs: https://pris.ly/d/prisma-schema
-
 generator client {
   provider = "prisma-client-js"
 }
 
 datasource db {
-  provider = "mysql"
-  url      = env("DATABASE_URL")
+  provider  = "postgresql"
+  url       = env("DATABASE_URL")
+  directUrl = env("DIRECT_URL")
 }
 
 model Event {
@@ -24,7 +22,7 @@ model Group {
   id       Int      @id @default(autoincrement())
   id_event Int
   name     String
-  event    Event?   @relation(fields: [id_event], references: [id])
+  event    Event    @relation(fields: [id_event], references: [id])
   People   People[]
 }
 
@@ -35,6 +33,6 @@ model People {
   name     String
   cpf      String
   matched  String @default("")
-  event    Event? @relation(fields: [id_event], references: [id])
-  group    Group? @relation(fields: [id_group], references: [id])
+  event    Event  @relation(fields: [id_event], references: [id])
+  group    Group  @relation(fields: [id_group], references: [id])
 }
