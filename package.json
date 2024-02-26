@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "nodemon",
-    "build": "rimraf ./public && tsc",
+    "build": "rimraf public && tsc --outDir public",
     "start": "node build/server.js",
     "ts.check": "tsc --project tsconfig.json",
     "add-build": "git add public",
