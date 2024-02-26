@@ -1,12 +1,12 @@
 {
     "version": 2,
-    "builds": [
-        {
-            "src": "public/server.js",
-            "use": "@vercel/node",
-            "config": { "includeFiles": ["public/**"] }
-        }
-    ],
+    // "builds": [
+    //     {
+    //         "src": "public/server.js",
+    //         "use": "@vercel/node",
+    //         "config": { "includeFiles": ["public/**"] }
+    //     }
+    // ],
     "routes": [
         {
             "src": "/(.*)",
