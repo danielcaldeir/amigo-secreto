@@ -5,7 +5,7 @@
     "builds": [
         { "src": "*.html", "use": "@vercel/static" },
         { "src": "*.py", "use": "@vercel/python" },
-        { "src": "*.js", "use": "@vercel/node" }
+        { "src": "*.js", "use": "@vercel/node", "config": { "includeFiles": ["public/**"] } }
     ],
     "routes": [
         {

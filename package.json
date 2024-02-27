@@ -6,15 +6,17 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "nodemon",
-    "build": "npx rimraf public && npx tsc",
+    "build": "rimraf public && tsc",
     "start": "node public/server.js",
     "ts.check": "tsc --project tsconfig.json",
+    "add-build": "git add dist",
     "migrate:dev": "prisma migrate dev",
     "migrate:deploy": "prisma migrate deploy"
   },
   "pre-commit": [
     "ts.check",
-    "build"
+    "build",
+    "add-build"
   ],
   "author": "",
   "license": "ISC",
