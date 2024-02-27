@@ -9,14 +9,12 @@
     "build": "npx tsc --outDir public",
     "start": "node public/server.js",
     "ts.check": "tsc --project tsconfig.json",
-    "add-build": "git add public",
     "migrate:dev": "prisma migrate dev",
     "migrate:deploy": "prisma migrate deploy"
   },
   "pre-commit": [
     "ts.check",
-    "build",
-    "add-build"
+    "build"
   ],
   "author": "",
   "license": "ISC",
