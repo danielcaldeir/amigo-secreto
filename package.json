@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "nodemon",
-    "build": "rimraf public && tsc",
+    "build": "npx rimraf public && tsc",
     "start": "node public/server.js",
     "ts.check": "tsc --project tsconfig.json",
     "migrate:dev": "prisma migrate dev",
