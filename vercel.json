@@ -1,14 +1,14 @@
 {
     "version": 2,
     "name": "amigo-secreto",
-    "installCommand": "npm install",
+    "installCommand": "npm install --foreground-scripts",
     "buildCommand": "npm run build",
     "outputDirectory": "public",
     "builds": [
         { "src": "*.html", "use": "@vercel/static" },
         { "src": "*.py", "use": "@vercel/python" },
         { "src": "package.json", "use": "@vercel/next" },
-        { "src": "public/server.js", "use": "@vercel/node", "config": { "includeFiles": ["public/**"] } }
+        { "src": "public/server.js", "use": "@vercel/node" }
     ],
     "routes": [
         {
