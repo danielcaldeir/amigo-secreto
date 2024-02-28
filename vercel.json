@@ -1,6 +1,5 @@
 {
     "version": 2,
-    "name": "amigo-secreto",
     "installCommand": "npm install --foreground-scripts",
     "buildCommand": "npm run build",
     "outputDirectory": "public",
