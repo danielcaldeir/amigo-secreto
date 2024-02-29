@@ -6,7 +6,6 @@
     "builds": [
         { "src": "*.html", "use": "@vercel/static" },
         { "src": "*.py", "use": "@vercel/python" },
-        { "src": "package.json", "use": "@vercel/next" },
         { "src": "public/server.js", "use": "@vercel/node" }
     ],
     "routes": [
