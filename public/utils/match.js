@@ -13,3 +13,4 @@ const decryptMatch = (match) => {
     return parseInt(idString);
 };
 exports.decryptMatch = decryptMatch;
+//# sourceMappingURL=match.js.map

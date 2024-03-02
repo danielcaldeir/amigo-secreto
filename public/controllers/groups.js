@@ -97,3 +97,4 @@ const deleteGroup = (req, res) => __awaiter(void 0, void 0, void 0, function* ()
     res.json({ error: 'Ocorreu um erro' });
 });
 exports.deleteGroup = deleteGroup;
+//# sourceMappingURL=groups.js.map

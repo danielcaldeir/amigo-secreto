@@ -5,3 +5,4 @@ const getToday = () => {
     return Intl.DateTimeFormat('pt-br').format(new Date());
 };
 exports.getToday = getToday;
+//# sourceMappingURL=getToday.js.map

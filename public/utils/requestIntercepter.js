@@ -6,3 +6,4 @@ const requestIntercepter = (req, res, next) => {
     next();
 };
 exports.requestIntercepter = requestIntercepter;
+//# sourceMappingURL=requestIntercepter.js.map

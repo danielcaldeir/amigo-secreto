@@ -17,3 +17,4 @@ const validateToken = (token) => {
     return (token === currentToken);
 };
 exports.validateToken = validateToken;
+//# sourceMappingURL=authsv.js.map

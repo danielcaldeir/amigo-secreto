@@ -209,3 +209,4 @@ const getSearch = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     return res.json({ error: "Ocorreu um error" });
 });
 exports.getSearch = getSearch;
+//# sourceMappingURL=peoples.js.map

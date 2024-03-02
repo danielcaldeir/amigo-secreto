@@ -121,3 +121,4 @@ const deleteEvent = (req, res) => __awaiter(void 0, void 0, void 0, function* ()
     res.json({ error: 'Ocorreu um erro' });
 });
 exports.deleteEvent = deleteEvent;
+//# sourceMappingURL=events.js.map

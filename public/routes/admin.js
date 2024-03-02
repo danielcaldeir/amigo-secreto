@@ -50,3 +50,4 @@ router.post('/peoples/:id_event/:id_group', auth.validate, people.addPeople);
 router.put('/peoples/:id_event/:id_group/:id', auth.validate, people.updatePeople);
 router.delete('/peoples/:id_event/:id_group/:id', auth.validate, people.deletePeople);
 exports.default = router;
+//# sourceMappingURL=admin.js.map

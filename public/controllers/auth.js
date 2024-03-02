@@ -53,3 +53,4 @@ const validate = (req, res, next) => {
     next();
 };
 exports.validate = validate;
+//# sourceMappingURL=auth.js.map

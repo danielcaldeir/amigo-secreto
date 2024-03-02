@@ -32,3 +32,4 @@ router.get('/events/:id', event.getEvent);
 router.get('/events/search/:id_event/:cpf', people.getSearch);
 router.get('/events/search/:id_event', people.getSearch);
 exports.default = router;
+//# sourceMappingURL=site.js.map
