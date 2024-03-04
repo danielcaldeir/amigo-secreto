@@ -1,7 +1,11 @@
-import express, { Request, Response } from 'express'
+import express, { Request, Response, Router } from 'express'
 
 const app = express()
 const port = process.env.PORT || 3000
+const router = Router();
+
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 
 app.get('/', (_req: Request, res: Response) => {
   return res.send('Express Typescript on Vercel')
