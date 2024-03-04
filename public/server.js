@@ -13,21 +13,27 @@ const requestIntercepter_1 = require("./utils/requestIntercepter");
 // import { server } from 'typescript';
 // import router from './routes/site';
 const app = (0, express_1.default)();
+const port = (process.env.PORT) ? parseInt(process.env.PORT) : 9000;
 app.use((0, cors_1.default)());
 app.use(express_1.default.json());
 app.use(express_1.default.urlencoded({ extended: true }));
 app.all('*', requestIntercepter_1.requestIntercepter);
 app.use('/admin', admin_1.default);
 app.use('/', site_1.default);
-const runServer = (port, server) => {
-    server.listen(port, () => {
-        console.log("Running at PORT " + port);
-    });
-};
+// const runServer = (port: number, server: http.Server) => {
+//     server.listen(port, () => {
+//             console.log("Running at PORT "+ port);
+//         }
+//     );
+// }
 const regularServer = http_1.default.createServer(app);
 // Instalacao no VERCEL
-const serverPort = process.env.PORT ? parseInt(process.env.PORT) : 9000;
-runServer(serverPort, regularServer);
+// const serverPort: number = (process.env.PORT) ? parseInt(process.env.PORT) : 9000;
+app.listen(port, () => {
+    return console.log(`Server is listening on ${port}`);
+});
+module.exports = app;
+// runServer(serverPort, regularServer);
 // if (process.env.NODE_ENV === 'production') {
 //     // TODO: configurar SSL
 //     // TODO: rodar sever na 80 e na 443
