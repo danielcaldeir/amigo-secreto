@@ -10,3 +10,4 @@ router.get('/events/search/:id_event/:cpf', people.getSearch);
 router.get('/events/search/:id_event', people.getSearch);
 
 export default router;
+export const siteRoutes = router;

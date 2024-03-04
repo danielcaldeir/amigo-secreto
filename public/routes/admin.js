@@ -23,6 +23,7 @@ var __importStar = (this && this.__importStar) || function (mod) {
     return result;
 };
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.adminRoutes = void 0;
 const express_1 = require("express");
 const auth = __importStar(require("../controllers/auth"));
 const event = __importStar(require("../controllers/events"));
@@ -50,4 +51,5 @@ router.post('/peoples/:id_event/:id_group', auth.validate, people.addPeople);
 router.put('/peoples/:id_event/:id_group/:id', auth.validate, people.updatePeople);
 router.delete('/peoples/:id_event/:id_group/:id', auth.validate, people.deletePeople);
 exports.default = router;
+exports.adminRoutes = router;
 //# sourceMappingURL=admin.js.map

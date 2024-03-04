@@ -31,3 +31,4 @@ router.put('/peoples/:id_event/:id_group/:id', auth.validate, people.updatePeopl
 router.delete('/peoples/:id_event/:id_group/:id', auth.validate, people.deletePeople);
 
 export default router;
+export const adminRoutes = router;

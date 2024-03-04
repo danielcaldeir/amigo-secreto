@@ -24,17 +24,23 @@ var __importStar = (this && this.__importStar) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = __importStar(require("express"));
+const requestIntercepter_1 = require("./utils/requestIntercepter");
+const site_1 = require("./routes/site");
+const admin_1 = require("./routes/admin");
 const app = (0, express_1.default)();
 const port = process.env.PORT || 3000;
 const router = (0, express_1.Router)();
 app.use(express_1.default.json());
 app.use(express_1.default.urlencoded({ extended: true }));
-app.get('/', (_req, res) => {
-    return res.send('Express Typescript on Vercel');
-});
-app.get('/ping', (_req, res) => {
-    return res.send('pong 🏓');
-});
+app.all('*', requestIntercepter_1.requestIntercepter);
+app.use('/', site_1.siteRoutes);
+app.use('/admin', admin_1.adminRoutes);
+// app.get('/', (_req: Request, res: Response) => {
+//   return res.send('Express Typescript on Vercel')
+// })
+// app.get('/ping', (_req: Request, res: Response) => {
+//   return res.send('pong 🏓')
+// })
 app.listen(port, () => {
     return console.log(`Server is listening on ${port}`);
 });

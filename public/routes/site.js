@@ -23,6 +23,7 @@ var __importStar = (this && this.__importStar) || function (mod) {
     return result;
 };
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.siteRoutes = void 0;
 const event = __importStar(require("../controllers/events"));
 const people = __importStar(require("../controllers/peoples"));
 const express_1 = require("express");
@@ -32,4 +33,5 @@ router.get('/events/:id', event.getEvent);
 router.get('/events/search/:id_event/:cpf', people.getSearch);
 router.get('/events/search/:id_event', people.getSearch);
 exports.default = router;
+exports.siteRoutes = router;
 //# sourceMappingURL=site.js.map
