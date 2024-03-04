@@ -11,13 +11,13 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.all('*', requestIntercepter);
 
-app.use('/', siteRoutes);
-app.use('/admin', adminRoutes);
+// app.use('/', siteRoutes);
+// app.use('/admin', adminRoutes);
 
-// app.get('/', (_req: Request, res: Response) => {
-//   return res.send('Express Typescript on Vercel')
-// })
-
+app.get('/', (_req: Request, res: Response) => {
+  return res.send('Express Typescript on Vercel')
+})
+app.get('/ping', (req, res) => { res.json({pong: true})});
 // app.get('/ping', (_req: Request, res: Response) => {
 //   return res.send('pong 🏓')
 // })
