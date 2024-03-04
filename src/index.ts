@@ -1,5 +1,7 @@
 import express, { Request, Response, Router } from 'express'
 import { requestIntercepter } from './utils/requestIntercepter';
+import * as event from "./controllers/events";
+import * as people from "./controllers/peoples";
 import { siteRoutes } from './routes/site';
 import { adminRoutes } from './routes/admin';
 
@@ -18,6 +20,10 @@ app.get('/', (_req: Request, res: Response) => {
   return res.send('Express Typescript on Vercel')
 })
 app.get('/ping', (req, res) => { res.json({pong: true})});
+app.get('/events/:id', event.getEvent);
+app.get('/events/search/:id_event/:cpf', people.getSearch);
+app.get('/events/search/:id_event', people.getSearch);
+
 // app.get('/ping', (_req: Request, res: Response) => {
 //   return res.send('pong 🏓')
 // })

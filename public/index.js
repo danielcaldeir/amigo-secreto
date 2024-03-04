@@ -25,6 +25,8 @@ var __importStar = (this && this.__importStar) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = __importStar(require("express"));
 const requestIntercepter_1 = require("./utils/requestIntercepter");
+const event = __importStar(require("./controllers/events"));
+const people = __importStar(require("./controllers/peoples"));
 const app = (0, express_1.default)();
 const port = process.env.PORT || 3000;
 const router = (0, express_1.Router)();
@@ -37,6 +39,9 @@ app.get('/', (_req, res) => {
     return res.send('Express Typescript on Vercel');
 });
 app.get('/ping', (req, res) => { res.json({ pong: true }); });
+app.get('/events/:id', event.getEvent);
+app.get('/events/search/:id_event/:cpf', people.getSearch);
+app.get('/events/search/:id_event', people.getSearch);
 // app.get('/ping', (_req: Request, res: Response) => {
 //   return res.send('pong 🏓')
 // })
