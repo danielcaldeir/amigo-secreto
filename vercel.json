@@ -1,0 +1,11 @@
+{
+    "version": 2,
+    "installCommand": "npm install --foreground-scripts",
+    "buildCommand": "prisma generate",
+    "rewrites": [
+        { "source": "/(.*)", "destination": "/public/server.js" }
+    ],
+    "builds": [
+        { "src": "/public/server.js", "use": "@vercel/node" }
+    ]
+}
