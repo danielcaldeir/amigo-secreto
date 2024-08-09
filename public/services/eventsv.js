@@ -118,6 +118,9 @@ const doMatched = (id) => __awaiter(void 0, void 0, void 0, function* () {
             // }
             const peopleList = yield peoplesv.getAll({ id_event: id });
             if (peopleList) {
+                if (peopleList.length == 0) {
+                    return false;
+                }
                 let sortedList = [];
                 let sortable = [];
                 let attempts = 0;

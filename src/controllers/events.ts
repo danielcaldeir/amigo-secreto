@@ -42,7 +42,8 @@ export const updateEvent:RequestHandler = async (req, res) => {
     const body = addEventSchema.safeParse(req.body);
     const updated = {
         events: {},
-        peoples: {}
+        peoples: {},
+        success: true
     }
     if (!body.success) return res.json({ error: 'Dados Invalidos'});
     updated.events = await eventsv.update(parseInt(id), body.data);
@@ -51,8 +52,9 @@ export const updateEvent:RequestHandler = async (req, res) => {
         if (eventItem) {
             if ( eventItem.status) {
                 // Todo: Fazer o sorteio
-                const result = eventsv.doMatched(parseInt(id));
+                const result = await eventsv.doMatched(parseInt(id));
                 console.log(result);
+                updated.success = result as boolean;
                 if (!result) {
                     // return res.json({ error: "Grupos impossiveis de sortear! "});
                     updated.peoples = { error: "Grupos impossiveis de sortear! "};
@@ -73,7 +75,7 @@ export const updateEvent:RequestHandler = async (req, res) => {
                 // if (updatPeople) return res.json({ peoples: updatPeople });
             }
         }
-        return res.status(201).json({ events: updated.events, peoples: updated.peoples });
+        return res.status(201).json({ events: updated.events, peoples: updated.peoples, success: updated.success });
     } 
     res.json({ error: 'Ocorreu um Erro' });
 }

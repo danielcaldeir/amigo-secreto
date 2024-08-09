@@ -71,7 +71,7 @@ export const remove = async (id: number) => {
  * @param id 
  * @returns boolean
  */
-export const doMatched = async (id:number): Promise<Boolean | Object> => {
+export const doMatched = async (id:number): Promise<Boolean> => {
     const eventItem = await getOne(id);
     if (eventItem){
         if (eventItem.status) {
@@ -82,6 +82,7 @@ export const doMatched = async (id:number): Promise<Boolean | Object> => {
             // }
             const peopleList = await peoplesv.getAll({ id_event: id });
             if (peopleList) {
+                if (peopleList.length == 0) {return false;}
                 let sortedList:{id: number, match:number}[] = [];
                 let sortable: number[] = [];
 
