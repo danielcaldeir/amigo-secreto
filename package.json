@@ -7,6 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "nodemon",
     "build": "tsc --outDir public",
+    "postinstall": "prisma generate",
     "start": "ts-node public/server.js",
     "del-public": "rimraf public",
     "ts.check": "tsc --project tsconfig.json",
